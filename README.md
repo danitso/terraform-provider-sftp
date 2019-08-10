@@ -34,9 +34,9 @@ If you're building the provider, follow the instructions to [install it as a plu
 * `host` - (Required) The remote host.
 * `host_key` - (Optional) The remote host's key. Defaults to an empty string.
 * `password` - (Optional) The password for the remote host. Defaults to an empty string (use `private_key` for key based authorization).
+* `path` - (Required) The absolute path to the file.
 * `port` - (Optional) The port number for the remote host.
 * `private_key` - (Optional) The private key for the remote host. Defaults to an empty string (use `password` for regular password authorization).
-* `remote_file_path` - (Required) The absolute path to a remote file.
 * `timeout` - (Optional) The connect timeout. Defaults to `5m` (5 minutes).
 * `user` - (Required) The username for the remote host.
 

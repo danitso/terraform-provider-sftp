@@ -19,7 +19,7 @@ func TestDataSourceRemoteFileSchema(t *testing.T) {
 
 	requiredKeys := []string{
 		mkDataSourceRemoteFileHost,
-		mkDataSourceRemoteFileRemoteFilePath,
+		mkDataSourceRemoteFilePath,
 	}
 
 	for _, v := range requiredKeys {
