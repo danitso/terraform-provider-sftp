@@ -18,8 +18,8 @@ func TestDataSourceRemoteFileSchema(t *testing.T) {
 	s := dataSourceRemoteFile()
 
 	requiredKeys := []string{
-		mkDataSourceFileHost,
-		mkDataSourceFileRemoteFilePath,
+		mkDataSourceRemoteFileHost,
+		mkDataSourceRemoteFileRemoteFilePath,
 	}
 
 	for _, v := range requiredKeys {
@@ -33,8 +33,9 @@ func TestDataSourceRemoteFileSchema(t *testing.T) {
 	}
 
 	attributeKeys := []string{
-		mkDataSourceFileLastModified,
-		mkDataSourceFileSize,
+		mkDataSourceRemoteFileContents,
+		mkDataSourceRemoteFileLastModified,
+		mkDataSourceRemoteFileSize,
 	}
 
 	for _, v := range attributeKeys {

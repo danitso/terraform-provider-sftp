@@ -13,89 +13,89 @@ import (
 )
 
 const (
-	mkDataSourceFileContents       = "contents"
-	mkDataSourceFileHost           = "host"
-	mkDataSourceFileHostKey        = "host_key"
-	mkDataSourceFileLastModified   = "last_modified"
-	mkDataSourceFilePassword       = "password"
-	mkDataSourceFilePort           = "port"
-	mkDataSourceFilePrivateKey     = "private_key"
-	mkDataSourceFileRemoteFilePath = "remote_file_path"
-	mkDataSourceFileSize           = "size"
-	mkDataSourceFileTimeout        = "timeout"
-	mkDataSourceFileUser           = "user"
+	mkDataSourceRemoteFileContents       = "contents"
+	mkDataSourceRemoteFileHost           = "host"
+	mkDataSourceRemoteFileHostKey        = "host_key"
+	mkDataSourceRemoteFileLastModified   = "last_modified"
+	mkDataSourceRemoteFilePassword       = "password"
+	mkDataSourceRemoteFilePort           = "port"
+	mkDataSourceRemoteFilePrivateKey     = "private_key"
+	mkDataSourceRemoteFileRemoteFilePath = "remote_file_path"
+	mkDataSourceRemoteFileSize           = "size"
+	mkDataSourceRemoteFileTimeout        = "timeout"
+	mkDataSourceRemoteFileUser           = "user"
 )
 
 // dataSourceRemoteFile retrieves information about a remote file.
 func dataSourceRemoteFile() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
-			mkDataSourceFileContents: &schema.Schema{
+			mkDataSourceRemoteFileContents: &schema.Schema{
 				Type:        schema.TypeString,
 				Description: "The file contents",
 				Computed:    true,
 				ForceNew:    true,
 			},
-			mkDataSourceFileHost: &schema.Schema{
+			mkDataSourceRemoteFileHost: &schema.Schema{
 				Type:        schema.TypeString,
 				Description: "The hostname",
 				Required:    true,
 				ForceNew:    true,
 			},
-			mkDataSourceFileHostKey: &schema.Schema{
+			mkDataSourceRemoteFileHostKey: &schema.Schema{
 				Type:        schema.TypeString,
 				Description: "The host key",
 				Optional:    true,
 				Default:     "",
 				ForceNew:    true,
 			},
-			mkDataSourceFileLastModified: &schema.Schema{
+			mkDataSourceRemoteFileLastModified: &schema.Schema{
 				Type:        schema.TypeString,
 				Description: "The last modified timestamp",
 				Computed:    true,
 				ForceNew:    true,
 			},
-			mkDataSourceFilePassword: &schema.Schema{
+			mkDataSourceRemoteFilePassword: &schema.Schema{
 				Type:        schema.TypeString,
 				Description: "The password",
 				Optional:    true,
 				Default:     "",
 				ForceNew:    true,
 			},
-			mkDataSourceFilePort: &schema.Schema{
+			mkDataSourceRemoteFilePort: &schema.Schema{
 				Type:        schema.TypeInt,
 				Description: "The port number",
 				Optional:    true,
 				Default:     22,
 				ForceNew:    true,
 			},
-			mkDataSourceFilePrivateKey: &schema.Schema{
+			mkDataSourceRemoteFilePrivateKey: &schema.Schema{
 				Type:        schema.TypeString,
 				Description: "The private key",
 				Optional:    true,
 				Default:     "",
 				ForceNew:    true,
 			},
-			mkDataSourceFileRemoteFilePath: &schema.Schema{
+			mkDataSourceRemoteFileRemoteFilePath: &schema.Schema{
 				Type:        schema.TypeString,
 				Description: "The remote file path",
 				Required:    true,
 				ForceNew:    true,
 			},
-			mkDataSourceFileSize: &schema.Schema{
+			mkDataSourceRemoteFileSize: &schema.Schema{
 				Type:        schema.TypeInt,
 				Description: "The file size (in bytes)",
 				Computed:    true,
 				ForceNew:    true,
 			},
-			mkDataSourceFileTimeout: &schema.Schema{
+			mkDataSourceRemoteFileTimeout: &schema.Schema{
 				Type:        schema.TypeString,
 				Description: "The connection timeout",
 				Optional:    true,
 				Default:     "5m",
 				ForceNew:    true,
 			},
-			mkDataSourceFileUser: &schema.Schema{
+			mkDataSourceRemoteFileUser: &schema.Schema{
 				Type:        schema.TypeString,
 				Description: "The username",
 				Optional:    true,
@@ -110,13 +110,13 @@ func dataSourceRemoteFile() *schema.Resource {
 
 // dataSourceRemoteFileCreateSSHClient creates a new SSH client.
 func dataSourceRemoteFileCreateSSHClient(d *schema.ResourceData, m interface{}) (*ssh.Client, error) {
-	host := d.Get(mkDataSourceFileHost).(string)
-	hostKey := d.Get(mkDataSourceFileHostKey).(string)
-	password := d.Get(mkDataSourceFilePassword).(string)
-	port := d.Get(mkDataSourceFilePort).(int)
-	privateKey := d.Get(mkDataSourceFilePrivateKey).(string)
-	timeout, err := time.ParseDuration(d.Get(mkDataSourceFileTimeout).(string))
-	username := d.Get(mkDataSourceFileUser).(string)
+	host := d.Get(mkDataSourceRemoteFileHost).(string)
+	hostKey := d.Get(mkDataSourceRemoteFileHostKey).(string)
+	password := d.Get(mkDataSourceRemoteFilePassword).(string)
+	port := d.Get(mkDataSourceRemoteFilePort).(int)
+	privateKey := d.Get(mkDataSourceRemoteFilePrivateKey).(string)
+	timeout, err := time.ParseDuration(d.Get(mkDataSourceRemoteFileTimeout).(string))
+	username := d.Get(mkDataSourceRemoteFileUser).(string)
 
 	if err != nil {
 		return nil, err
@@ -194,7 +194,7 @@ func dataSourceRemoteFileCreateSSHClient(d *schema.ResourceData, m interface{}) 
 
 // dataSourceRemoteFileRead reads information about a remote file.
 func dataSourceRemoteFileRead(d *schema.ResourceData, m interface{}) error {
-	remoteFilePath := d.Get(mkDataSourceFileRemoteFilePath).(string)
+	remoteFilePath := d.Get(mkDataSourceRemoteFileRemoteFilePath).(string)
 
 	// Create a new SFTP client.
 	sshClient, err := dataSourceRemoteFileCreateSSHClient(d, m)
@@ -233,9 +233,9 @@ func dataSourceRemoteFileRead(d *schema.ResourceData, m interface{}) error {
 
 	d.SetId(remoteFileInfo.Name())
 
-	d.Set(mkDataSourceFileContents, buffer.String())
-	d.Set(mkDataSourceFileLastModified, remoteFileInfo.ModTime().Format(time.RFC3339))
-	d.Set(mkDataSourceFileSize, int(remoteFileInfo.Size()))
+	d.Set(mkDataSourceRemoteFileContents, buffer.String())
+	d.Set(mkDataSourceRemoteFileLastModified, remoteFileInfo.ModTime().Format(time.RFC3339))
+	d.Set(mkDataSourceRemoteFileSize, int(remoteFileInfo.Size()))
 
 	return nil
 }
