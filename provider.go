@@ -7,12 +7,12 @@ import (
 // Provider returns the object for this provider.
 func Provider() *schema.Provider {
 	return &schema.Provider{
-		ConfigureFunc:  providerConfigure,
-		DataSourcesMap: map[string]*schema.Resource{},
-		ResourcesMap: map[string]*schema.Resource{
-			"sftp_file": resourceFile(),
+		ConfigureFunc: providerConfigure,
+		DataSourcesMap: map[string]*schema.Resource{
+			"sftp_remote_file": dataSourceRemoteFile(),
 		},
-		Schema: map[string]*schema.Schema{},
+		ResourcesMap: map[string]*schema.Resource{},
+		Schema:       map[string]*schema.Schema{},
 	}
 }
 

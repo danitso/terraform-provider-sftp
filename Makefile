@@ -13,9 +13,9 @@ example:
 	go build -o "example/$(NAME)_v$(VERSION)-custom_x4"
 	cd ./example && \
 	terraform init && \
-	terraform apply -auto-approve -var "key=$$key" && \
-	terraform apply -auto-approve -var "key=$$key" && \
-	terraform destroy -auto-approve -var "key=$$key"
+	terraform apply -auto-approve && \
+	terraform apply -auto-approve && \
+	terraform destroy -auto-approve
 
 fmt:
 	gofmt -w $(GOFMT_FILES)

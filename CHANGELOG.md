@@ -2,4 +2,4 @@
 
 FEATURES:
 
-* **New Resource:** `sftp_file_download`
+* **New Data Source:** `sftp_remote_file`
