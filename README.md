@@ -39,6 +39,7 @@ If you're building the provider, follow the instructions to [install it as a plu
 * `port` - (Optional) The port number for the remote host.
 * `private_key` - (Optional) The private key for the remote host. Defaults to an empty string (use `password` for regular password authorization).
 * `timeout` - (Optional) The connect timeout. Defaults to `5m` (5 minutes).
+* `triggers` - (Optional) The triggers.
 * `user` - (Required) The username for the remote host.
 
 #### Attributes

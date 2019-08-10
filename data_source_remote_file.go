@@ -24,6 +24,7 @@ const (
 	mkDataSourceRemoteFilePrivateKey   = "private_key"
 	mkDataSourceRemoteFileSize         = "size"
 	mkDataSourceRemoteFileTimeout      = "timeout"
+	mkDataSourceRemoteFileTriggers     = "triggers"
 	mkDataSourceRemoteFileUser         = "user"
 )
 
@@ -98,9 +99,15 @@ func dataSourceRemoteFile() *schema.Resource {
 			},
 			mkDataSourceRemoteFileTimeout: &schema.Schema{
 				Type:        schema.TypeString,
-				Description: "The connection timeout",
+				Description: "The connect timeout",
 				Optional:    true,
 				Default:     "5m",
+				ForceNew:    true,
+			},
+			mkDataSourceRemoteFileTriggers: &schema.Schema{
+				Type:        schema.TypeMap,
+				Description: "The triggers",
+				Optional:    true,
 				ForceNew:    true,
 			},
 			mkDataSourceRemoteFileUser: &schema.Schema{
