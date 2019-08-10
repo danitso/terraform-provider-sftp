@@ -31,6 +31,7 @@ If you're building the provider, follow the instructions to [install it as a plu
 
 #### Arguments
 
+* `allow_missing` - (Optional) Whether to ignore that the file is missing. Defaults to `false`.
 * `host` - (Required) The remote host.
 * `host_key` - (Optional) The remote host's key. Defaults to an empty string.
 * `password` - (Optional) The password for the remote host. Defaults to an empty string (use `private_key` for key based authorization).
