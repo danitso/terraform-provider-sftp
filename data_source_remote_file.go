@@ -5,7 +5,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"strconv"
 	"time"
 
 	"github.com/hashicorp/terraform/helper/schema"
@@ -35,6 +34,7 @@ func dataSourceRemoteFile() *schema.Resource {
 				Type:        schema.TypeString,
 				Description: "The file contents",
 				Computed:    true,
+				ForceNew:    true,
 			},
 			mkDataSourceFileHost: &schema.Schema{
 				Type:        schema.TypeString,
@@ -83,7 +83,7 @@ func dataSourceRemoteFile() *schema.Resource {
 				ForceNew:    true,
 			},
 			mkDataSourceFileSize: &schema.Schema{
-				Type:        schema.TypeString,
+				Type:        schema.TypeInt,
 				Description: "The file size (in bytes)",
 				Computed:    true,
 				ForceNew:    true,
@@ -235,7 +235,7 @@ func dataSourceRemoteFileRead(d *schema.ResourceData, m interface{}) error {
 
 	d.Set(mkDataSourceFileContents, buffer.String())
 	d.Set(mkDataSourceFileLastModified, remoteFileInfo.ModTime().Format(time.RFC3339))
-	d.Set(mkDataSourceFileSize, strconv.FormatInt(remoteFileInfo.Size(), 10))
+	d.Set(mkDataSourceFileSize, int(remoteFileInfo.Size()))
 
 	return nil
 }
