@@ -1,12 +1,12 @@
 # Terraform Provider for SFTP
 A Terraform Provider which adds SFTP functionality.
 
-# Requirements
+## Requirements
 
 - [Terraform](https://www.terraform.io/downloads.html) 0.11+
 - [Go](https://golang.org/doc/install) 1.12 (to build the provider plugin)
 
-# Building the Provider
+## Building the Provider
 Clone repository to: `$GOPATH/src/github.com/danitso/terraform-provider-sftp`
 
 ```sh
@@ -22,14 +22,14 @@ $ make init
 $ make build
 ```
 
-# Using the Provider
+## Using the Provider
 If you're building the provider, follow the instructions to [install it as a plugin.](https://www.terraform.io/docs/plugins/basics.html#installing-plugins) After placing it into your plugins directory,  run `terraform init` to initialize it.
 
-## Data Sources
+### Data Sources
 
-### Remote File (sftp_remote_file)
+#### Remote File (sftp_remote_file)
 
-#### Arguments
+##### Arguments
 
 * `allow_missing` - (Optional) Whether to ignore that the file is missing. Defaults to `false`.
 * `host` - (Required) The remote host.
@@ -42,13 +42,13 @@ If you're building the provider, follow the instructions to [install it as a plu
 * `triggers` - (Optional) The triggers.
 * `user` - (Required) The username for the remote host.
 
-#### Attributes
+##### Attributes
 
 * `contents` - The file contents.
 * `last_modified` - The last modified timestamp of the file.
 * `size` - The file size (in bytes).
 
-# Developing the Provider
+## Developing the Provider
 If you wish to work on the provider, you'll first need [Go](http://www.golang.org) installed on your machine (version 1.12+ is *required*).
 You'll also need to correctly setup a [GOPATH](http://golang.org/doc/code.html#GOPATH), as well as adding `$GOPATH/bin` to your `$PATH`.
 
@@ -67,7 +67,7 @@ If you wish to contribute to the provider, the following requirements must be me
 * The Go code must be formatted using Gofmt
 * Dependencies are installed by `make init`
 
-# Testing the Provider
+## Testing the Provider
 In order to test the provider, you can simply run `make test`.
 
 ```sh
