@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.com/danitso/terraform-provider-sftp.svg?branch=master)](https://travis-ci.com/danitso/terraform-provider-sftp)
+
 # Terraform Provider for SFTP
 A Terraform Provider which adds SFTP functionality.
 
