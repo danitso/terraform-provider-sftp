@@ -6,7 +6,7 @@ A Terraform Provider which adds SFTP functionality.
 ## Requirements
 
 - [Terraform](https://www.terraform.io/downloads.html) 0.11+
-- [Go](https://golang.org/doc/install) 1.12 (to build the provider plugin)
+- [Go](https://golang.org/doc/install) 1.13 (to build the provider plugin)
 
 ## Building the Provider
 Clone repository to: `$GOPATH/src/github.com/danitso/terraform-provider-sftp`
