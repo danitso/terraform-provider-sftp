@@ -9,5 +9,5 @@ const (
 	TerraformProviderName = "terraform-provider-sftp"
 
 	// TerraformProviderVersion specifies the version number.
-	TerraformProviderVersion = "0.1.0"
+	TerraformProviderVersion = "0.1.1"
 )
