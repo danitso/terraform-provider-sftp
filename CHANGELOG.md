@@ -1,3 +1,13 @@
+## 0.2.0 (UNRELEASED)
+
+ENHANCEMENTS:
+
+* provider: Upgraded to SFTP v1.11.0 and Terraform v0.12.23
+
+OTHER:
+
+* provider/docs: Add HTML documentation powered by GitHub Pages
+
 ## 0.1.1
 
 ENHANCEMENTS:

@@ -1,7 +1,7 @@
-[![Build Status](https://api.travis-ci.com/danitso/terraform-provider-sftp.svg?branch=master)](https://travis-ci.com/danitso/terraform-provider-sftp)
+[![Build Status](https://api.travis-ci.com/danitso/terraform-provider-sftp.svg?branch=master)](https://travis-ci.com/danitso/terraform-provider-sftp) [![GoDoc](https://godoc.org/github.com/danitso/terraform-provider-sftp?status.svg)](http://godoc.org/github.com/danitso/terraform-provider-sftp)
 
 # Terraform Provider for SFTP
-A Terraform Provider which adds SFTP functionality.
+A Terraform Provider which adds additional SFTP functionality.
 
 ## Requirements
 
@@ -27,28 +27,7 @@ $ make build
 ## Using the Provider
 If you're building the provider, follow the instructions to [install it as a plugin.](https://www.terraform.io/docs/plugins/basics.html#installing-plugins) After placing it into your plugins directory,  run `terraform init` to initialize it.
 
-### Data Sources
-
-#### Remote File (sftp_remote_file)
-
-##### Arguments
-
-* `allow_missing` - (Optional) Whether to ignore that the file is missing. Defaults to `false`.
-* `host` - (Required) The remote host.
-* `host_key` - (Optional) The remote host's key. Defaults to an empty string.
-* `password` - (Optional) The password for the remote host. Defaults to an empty string (use `private_key` for key based authorization).
-* `path` - (Required) The absolute path to the file.
-* `port` - (Optional) The port number for the remote host.
-* `private_key` - (Optional) The private key for the remote host. Defaults to an empty string (use `password` for regular password authorization).
-* `timeout` - (Optional) The connect timeout. Defaults to `5m` (5 minutes).
-* `triggers` - (Optional) The triggers.
-* `user` - (Required) The username for the remote host.
-
-##### Attributes
-
-* `contents` - The file contents.
-* `last_modified` - The last modified timestamp of the file.
-* `size` - The file size (in bytes).
+For more information, please refer to the [official documentation](http://danitso.com/terraform-provider-sftp/).
 
 ## Developing the Provider
 If you wish to work on the provider, you'll first need [Go](http://www.golang.org) installed on your machine (version 1.12+ is *required*).
