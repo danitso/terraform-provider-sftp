@@ -36,85 +36,85 @@ const (
 func dataSourceRemoteFile() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
-			mkDataSourceRemoteFileAllowMissing: &schema.Schema{
+			mkDataSourceRemoteFileAllowMissing: {
 				Type:        schema.TypeBool,
 				Description: "Whether to ignore that the file is missing",
 				Optional:    true,
 				Default:     false,
 				ForceNew:    true,
 			},
-			mkDataSourceRemoteFileContents: &schema.Schema{
+			mkDataSourceRemoteFileContents: {
 				Type:        schema.TypeString,
 				Description: "The file contents",
 				Computed:    true,
 				ForceNew:    true,
 			},
-			mkDataSourceRemoteFileHost: &schema.Schema{
+			mkDataSourceRemoteFileHost: {
 				Type:        schema.TypeString,
 				Description: "The hostname",
 				Required:    true,
 				ForceNew:    true,
 			},
-			mkDataSourceRemoteFileHostKey: &schema.Schema{
+			mkDataSourceRemoteFileHostKey: {
 				Type:        schema.TypeString,
 				Description: "The host key",
 				Optional:    true,
 				Default:     "",
 				ForceNew:    true,
 			},
-			mkDataSourceRemoteFileLastModified: &schema.Schema{
+			mkDataSourceRemoteFileLastModified: {
 				Type:        schema.TypeString,
 				Description: "The last modified timestamp",
 				Computed:    true,
 				ForceNew:    true,
 			},
-			mkDataSourceRemoteFilePassword: &schema.Schema{
+			mkDataSourceRemoteFilePassword: {
 				Type:        schema.TypeString,
 				Description: "The password",
 				Optional:    true,
 				Default:     "",
 				ForceNew:    true,
 			},
-			mkDataSourceRemoteFilePath: &schema.Schema{
+			mkDataSourceRemoteFilePath: {
 				Type:        schema.TypeString,
 				Description: "The file path",
 				Required:    true,
 				ForceNew:    true,
 			},
-			mkDataSourceRemoteFilePort: &schema.Schema{
+			mkDataSourceRemoteFilePort: {
 				Type:        schema.TypeInt,
 				Description: "The port number",
 				Optional:    true,
 				Default:     22,
 				ForceNew:    true,
 			},
-			mkDataSourceRemoteFilePrivateKey: &schema.Schema{
+			mkDataSourceRemoteFilePrivateKey: {
 				Type:        schema.TypeString,
 				Description: "The private key",
 				Optional:    true,
 				Default:     "",
 				ForceNew:    true,
 			},
-			mkDataSourceRemoteFileSize: &schema.Schema{
+			mkDataSourceRemoteFileSize: {
 				Type:        schema.TypeInt,
 				Description: "The file size (in bytes)",
 				Computed:    true,
 				ForceNew:    true,
 			},
-			mkDataSourceRemoteFileTimeout: &schema.Schema{
+			mkDataSourceRemoteFileTimeout: {
 				Type:        schema.TypeString,
 				Description: "The connect timeout",
 				Optional:    true,
 				Default:     "5m",
 				ForceNew:    true,
 			},
-			mkDataSourceRemoteFileTriggers: &schema.Schema{
+			mkDataSourceRemoteFileTriggers: {
 				Type:        schema.TypeMap,
 				Description: "The triggers",
 				Optional:    true,
 				ForceNew:    true,
 			},
-			mkDataSourceRemoteFileUser: &schema.Schema{
+			mkDataSourceRemoteFileUser: {
 				Type:        schema.TypeString,
 				Description: "The username",
 				Optional:    true,
@@ -260,6 +260,10 @@ func dataSourceRemoteFileRead(d *schema.ResourceData, m interface{}) error {
 
 	buffer := bytes.NewBuffer(nil)
 	_, err = io.Copy(buffer, remoteFile)
+
+	if err != nil {
+		return err
+	}
 
 	d.SetId(remoteFileInfo.Name())
 

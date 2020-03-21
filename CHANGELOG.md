@@ -2,7 +2,7 @@
 
 ENHANCEMENTS:
 
-* provider: Upgraded to SFTP v1.11.0 and Terraform v0.12.23
+* provider: Upgraded dependencies
 
 OTHER:
 

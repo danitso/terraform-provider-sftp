@@ -1,4 +1,6 @@
-[![Build Status](https://api.travis-ci.com/danitso/terraform-provider-sftp.svg?branch=master)](https://travis-ci.com/danitso/terraform-provider-sftp) [![GoDoc](https://godoc.org/github.com/danitso/terraform-provider-sftp?status.svg)](http://godoc.org/github.com/danitso/terraform-provider-sftp)
+[![Build Status](https://api.travis-ci.com/danitso/terraform-provider-sftp.svg?branch=master)](https://travis-ci.com/danitso/terraform-provider-sftp)
+[![Go Report Card](https://goreportcard.com/badge/github.com/danitso/terraform-provider-sftp)](https://goreportcard.com/report/github.com/danitso/terraform-provider-sftp)
+[![GoDoc](https://godoc.org/github.com/danitso/terraform-provider-sftp?status.svg)](http://godoc.org/github.com/danitso/terraform-provider-sftp)
 
 # Terraform Provider for SFTP
 A Terraform Provider which adds additional SFTP functionality.
