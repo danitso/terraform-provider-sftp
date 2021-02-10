@@ -5,6 +5,13 @@
 # Terraform Provider for SFTP
 A Terraform Provider which adds additional SFTP functionality.
 
+## Table of contents
+- [Requirements](#requirements)
+- [Building the Provider](#building-the-provider)
+- [Using the Provider](#using-the-provider)
+- [Developing the Provider](#developing-the-provider)
+- [Testing the Provider](#testing-the-provider)
+
 ## Requirements
 
 - [Terraform](https://www.terraform.io/downloads.html) 0.13+
