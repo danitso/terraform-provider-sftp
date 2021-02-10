@@ -1,0 +1,7 @@
+provider_installation {
+  dev_overrides {
+    "hashicorp/null" = "/home/developer/tmp/terraform-null"
+  }
+
+  direct {}
+}
