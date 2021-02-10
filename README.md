@@ -12,11 +12,11 @@ A Terraform Provider which adds additional SFTP functionality.
 - [GoReleaser](https://goreleaser.com/install/) 0.155+ (to build the provider plugin)
 
 ## Table of Contents
-- [Building the Provider](#building-the-provider)
-- [Using the Provider](#using-the-provider)
-- [Testing the Provider](#testing-the-provider)
+- [Building the provider](#building-the-provider)
+- [Using the provider](#using-the-provider)
+- [Testing the provider](#testing-the-provider)
 
-## Building the Provider
+## Building the provider
 - Clone the repository to `$GOPATH/src/github.com/danitso/terraform-provider-sftp`:
 
     ```sh
@@ -32,10 +32,10 @@ A Terraform Provider which adds additional SFTP functionality.
     $ make build
     ```
 
-## Using the Provider
-You can find the latest release in the [Terraform Registry](https://registry.terraform.io/providers/danitso/sftp/latest).
+## Using the provider
+You can find the latest release and its documentation in the [Terraform Registry](https://registry.terraform.io/providers/danitso/sftp/latest).
 
-## Testing the Provider
+## Testing the provider
 In order to test the provider, you can simply run `make test`.
 
 ```sh
