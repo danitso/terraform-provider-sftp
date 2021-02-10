@@ -5,7 +5,7 @@
 package sftptf
 
 import (
-	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 
 // Provider returns the object for this provider.

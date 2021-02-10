@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Remote File
-permalink: /data-sources/remote-file
+title: sftp_remote_file
+permalink: /data-sources/remote_file
 nav_order: 1
 parent: Data Sources
 ---
 
-# Data Source: Remote File
+# Data Source: sftp_remote_file
 
 Retrieves the contents of a remote file.
 
@@ -22,11 +22,11 @@ data "sftp_remote_file" "some_configuration_file" {
 
 resource "tls_private_key" "automation_key" {
   algorithm = "RSA"
-  rsa_bits  = 2048
+  rsa_bits  = 4096
 }
 ```
 
-## Arguments Reference
+## Argument Reference
 
 * `allow_missing` - (Optional) Whether to ignore that the file is missing. Defaults to `false`.
 * `host` - (Required) The remote host.
@@ -39,7 +39,7 @@ resource "tls_private_key" "automation_key" {
 * `triggers` - (Optional) The triggers.
 * `user` - (Required) The username for the remote host.
 
-## Attributes Reference
+## Attribute Reference
 
 * `contents` - The file contents.
 * `last_modified` - The last modified timestamp of the file.

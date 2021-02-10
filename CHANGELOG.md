@@ -1,12 +1,13 @@
-## 0.2.0 (UNRELEASED)
+## 0.2.0
 
 ENHANCEMENTS:
 
-* provider: Upgraded dependencies
+* provider: Upgrade to Go v1.15
+* provider: Upgrade dependencies
 
 OTHER:
 
-* provider/docs: Add HTML documentation powered by GitHub Pages
+* provider/docs: Add HTML documentation powered by GitHub Pages and Terraform Registry
 
 ## 0.1.1
 
