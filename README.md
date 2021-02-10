@@ -14,7 +14,6 @@ A Terraform Provider which adds additional SFTP functionality.
 ## Table of Contents
 - [Building the Provider](#building-the-provider)
 - [Using the Provider](#using-the-provider)
-- [Developing the Provider](#developing-the-provider)
 - [Testing the Provider](#testing-the-provider)
 
 ## Building the Provider
